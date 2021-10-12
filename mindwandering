@@ -1,0 +1,27 @@
+//Java code
+
+String oneName = "Press";
+String otherName = "";
+String displayed ="";
+int interval = 2000; // 2s
+int time;
+PFont font;
+void setup() {
+  size(1000, 1000);
+  font = createFont("arial", 40);
+  background(0,191,255);
+  displayed = oneName;
+  time = millis();
+  textFont(font);
+  fill(255);
+ 
+}
+void draw() {
+  background(0,191,255);
+  text(displayed, width/2 - textWidth(displayed)/2, height/2);
+  if (millis() - time > interval) {
+    displayed = displayed.equals(oneName)? otherName:oneName;
+    time  = millis();
+ 
+  }
+}
